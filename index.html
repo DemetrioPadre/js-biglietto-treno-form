@@ -28,25 +28,33 @@
 
     <div class="container py-5">
         <div>
-            <h1 id=>ciao utente calcoliamo insieme il tuo biglietto</h1>
-            <!-- <h2 id="main-title"></h2> -->
+            <h1 id=>Ciao utente calcoliamo insieme il tuo biglietto</h1>
+
         </div>
+
 
         <div>
             <label for="">Quanti km devi percorrere</label>
-            <input type="text" class="form-control mb-5" id="kmdafare">
+            <input type="text" class="form-control mb-5" id="userKm">
         </div>
 
         <div>
             <label for="">Scegli la tua fascia di età</label>
-            <select class="form-select mb-5" name="" id="age">
-                <option value="age1"> Minori di 18 anni </option>
-                <option value="age2"> Maggiori di 65 anni</option>
+            <select class="form-select mb-5" name="" id="userAge">
+                <option value="minori"> Minori di 18 anni </option>
+                <option value="maggiori"> Maggiori di 18 anni</option>
+                <option value="senior">Over 65 anni</option>
             </select>
         </div>
         <div>
-            <button id="print-button" class="btn btn-primary"> Stampa Ticekt</button>
+            <button type="button" id="print-button" class="btn btn-primary"> Stampa Ticekt</button>
+            <button type="button" id="annulla" class="btn btn-warning">Annulla</button>
         </div>
+
+        <div>
+            <h2 class="mt-5" id="finalticket"> Ecco il tuo biglietto</h2>
+        </div>
+
 
 
 

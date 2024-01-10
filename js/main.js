@@ -1,16 +1,27 @@
-//recupero la costante di risultato
-// const resultElement = document.getElementById('main-title');
-const kmdafare = document.getElementById('kmdafare');
+// //recupero la costante di risultato
+// // const resultElement = document.getElementById('main-title');
+// const userKm = document.getElementById('userKm');
 
 
-//chiedere all utente i km che deve percorrere
-const kmNeeded = prompt('Quanti km devi percorrere?');
+// //chiedere all utente i km che deve percorrere
+// const kmNeeded = prompt('Quanti km devi percorrere?');
 
-//chiedere all utente quanti anni ha
-const age = prompt('Quanti anni hai?');
+// //chiedere all utente quanti anni ha
+// const age = prompt('Quanti anni hai?');
+
+
+//input 
+
+const userKmInput = document.getElementById('userKm');
+const userAgeInput = document.getElementById('userAge');
+const printButton = document.getElementById('print-button');
+const annullaInput = document.getElementById('annulla');
+const finalTicket = document.getElementById('finalticket');
+
 
 //prezzo parziale del biglietto
-const partialTicket = kmNeeded * 0.21;
+const partialTicket = userKm * 0.21;
+console.log(partialTicket);
 
 
 
@@ -21,16 +32,25 @@ let sconto40 = partialTicket * 0.4;
 //variabile del biglietto che parte da 0
 let ticket = 0;
 
-//calcolatore di sconto in base all età dell utente
-if (age < 18) {
-    ticket = partialTicket - sconto20;
 
-} else if (age >= 65) {
-    ticket = partialTicket - sconto40;
-} else {
-    ticket = partialTicket;
 
-}
+const userAgeselection = userAgeInput.value;
 
-//stampiamo in html
-resultElement.innerHTML = 'Il tuo biglietto è ' + ticket.toFixed(2) + '€';
+printButton.addEventListener('click', function () {
+    if (userAgeselection == 'minori') {
+        ticket = partialTicket - sconto20;
+
+
+
+    } else if (userAgeselection == 'senior') {
+        ticket = partialTicket - sconto40;
+
+    } else {
+        ticket = partialTicket;
+
+    }//stampiamo in html
+    finalTicket.innerText = 'Il tuo biglietto è ' + finalTicket.toFixed(2) + '€';
+})
+
+
+
