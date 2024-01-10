@@ -19,24 +19,27 @@ const annullaInput = document.getElementById('annulla');
 const finalTicket = document.getElementById('finalticket');
 
 
-//prezzo parziale del biglietto
-const partialTicket = userKm * 0.21;
-console.log(partialTicket);
-
-
-
-//tipologia di sconto
-let sconto20 = partialTicket * 0.2;
-let sconto40 = partialTicket * 0.4;
 
 //variabile del biglietto che parte da 0
 let ticket = 0;
 
 
 
-const userAgeselection = userAgeInput.value;
+
 
 printButton.addEventListener('click', function () {
+    const userAgeselection = userAgeInput.value;
+    // quanti km devi fare
+    const userKm = parseInt(userKmInput.value);
+    //prezzo parziale del biglietto
+    const partialTicket = userKm * 0.21;
+    console.log(partialTicket);
+
+
+
+    //tipologia di sconto
+    let sconto20 = partialTicket * 0.2;
+    let sconto40 = partialTicket * 0.4;
     if (userAgeselection == 'minori') {
         ticket = partialTicket - sconto20;
 
@@ -49,7 +52,7 @@ printButton.addEventListener('click', function () {
         ticket = partialTicket;
 
     }//stampiamo in html
-    finalTicket.innerText = 'Il tuo biglietto è ' + finalTicket.toFixed(2) + '€';
+    finalTicket.innerText = 'Il tuo biglietto è ' + ticket.toFixed(2) + '€';
 })
 
 
