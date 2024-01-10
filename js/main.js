@@ -1,5 +1,6 @@
 //recupero la costante di risultato
-const resultElement = document.getElementById('main-title');
+// const resultElement = document.getElementById('main-title');
+const kmdafare = document.getElementById('kmdafare');
 
 
 //chiedere all utente i km che deve percorrere
@@ -26,4 +27,10 @@ if (age < 18) {
 
 } else if (age >= 65) {
     ticket = partialTicket - sconto40;
+} else {
+    ticket = partialTicket;
+
 }
+
+//stampiamo in html
+resultElement.innerHTML = 'Il tuo biglietto è ' + ticket.toFixed(2) + '€';
