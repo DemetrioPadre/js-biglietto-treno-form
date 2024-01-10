@@ -52,7 +52,7 @@ printButton.addEventListener('click', function () {
         ticket = partialTicket;
 
     }//stampiamo in html
-    finalTicket.innerText = 'Il tuo biglietto è ' + ticket.toFixed(2) + '€';
+    finalTicket.innerText = 'Il tuo biglietto è ' + ticket.toFixed(2) + '€' + 'ricordati di obbliterarlo prima di salire sul treno';
 })
 
 
