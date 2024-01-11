@@ -70,9 +70,4 @@ printButton.addEventListener('click', function () {
 
     //add ticket that was d-none
     document.getElementById('ticketContainer').classList.remove('d-none');
-
-
-})
-
-
-
+});
