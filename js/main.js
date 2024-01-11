@@ -11,7 +11,7 @@
 
 
 //input 
-
+const userNameInput = document.getElementById('userName');
 const userKmInput = document.getElementById('userKm');
 const userAgeInput = document.getElementById('userAge');
 const printButton = document.getElementById('print-button');
@@ -51,8 +51,18 @@ printButton.addEventListener('click', function () {
     } else {
         ticket = partialTicket;
 
-    }//stampiamo in html
+
+    }
+    userGenerate.innerText = userNameInput.value;
+
+    //stampiamo in html
     finalTicket.innerText = 'Il tuo biglietto è ' + ticket.toFixed(2) + '€' + 'ricordati di obbliterarlo prima di salire sul treno';
+
+
+    //carrozze random
+    document.getElementById('carrozza').innerText = Math.floor(Math.random() * 10 + 1);
+    //codice random sedile
+    document.getElementById('codiceCp').innerText = Math.floor(Math.random() * 999 + 1);
 })
 
 
