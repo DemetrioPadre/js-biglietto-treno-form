@@ -17,6 +17,7 @@ const userAgeInput = document.getElementById('userAge');
 const printButton = document.getElementById('print-button');
 const annullaInput = document.getElementById('annulla');
 const finalTicket = document.getElementById('finalticket');
+const userOffer = document.getElementById('offerta');
 
 
 
@@ -46,12 +47,16 @@ printButton.addEventListener('click', function () {
     let sconto40 = partialTicket * 0.4;
     if (userAgeselection == 'minori') {
         ticket = partialTicket - sconto20;
+        userOffer.innerText = 'biglietto con sconto del  20%';
+
 
     } else if (userAgeselection == 'senior') {
         ticket = partialTicket - sconto40;
+        userOffer.innerText = 'biglietto con sconto del 40%';
 
     } else {
         ticket = partialTicket;
+        userOffer.innerText = 'biglietto base';
     }
     userGenerate.innerText = userNameInput.value;
 
